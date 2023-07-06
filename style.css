@@ -23,7 +23,7 @@ body {
   /* border: 1px solid black; */
 }
 
-.generator{
+.generator {
   background: #8675e7;
 }
 
@@ -181,7 +181,8 @@ form .upload p {
   background-color: transparent;
 }
 
-#container2 .form button,#container2 .qr-code button{
+#container2 .form button,
+#container2 .qr-code button {
   width: 100%;
   margin: 10px 0px;
   height: 40px;
@@ -194,8 +195,13 @@ form .upload p {
   border-radius: 5px;
 }
 
-#container2 .qr-code button{
+#container2 .qr-code button {
   margin-top: 25px;
+}
+
+#container2 .qr-code img {
+  height: 200px;
+  width: 200px;
 }
 
 #container2 .qr-code {

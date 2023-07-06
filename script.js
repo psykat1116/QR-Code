@@ -83,23 +83,25 @@ generateBtn.onclick = () => {
   };
 };
 
-downloadBtn.onclick = ()=>{
-  let ImageURL = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${QRText.value}`;
+downloadBtn.onclick = () => {
+  let ImageURL = `https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${QRText.value}`;
   //Fetching the response as a blob
-  fetch(ImageURL).then((res)=>res.blob()).then((file)=>{
-    //URL.createObjectURL() creates a url of passed object
-    let tempURL = URL.createObjectURL(file);
-    //Create a anchor element
-    let aTag=document.createElement("a");
-    //Set its url as the tempurl
-    aTag.href=tempURL;
-    //Set the name of the downloaded file as filename
-    aTag.download=file.type;
-    document.body.appendChild(aTag);
-    // console.log(file);
-    // console.log(aTag.download);
-    //Clicking the aTag so that the file download
-    aTag.click();
-    aTag.remove();
-  })
+  fetch(ImageURL)
+    .then((res) => res.blob())
+    .then((file) => {
+      //URL.createObjectURL() creates a url of passed object
+      let tempURL = URL.createObjectURL(file);
+      //Create a anchor element
+      let aTag = document.createElement("a");
+      //Set its url as the tempurl
+      aTag.href = tempURL;
+      //Set the name of the downloaded file as filename
+      aTag.download = file.type;
+      document.body.appendChild(aTag);
+      // console.log(file);
+      // console.log(aTag.download);
+      //Clicking the aTag so that the file download
+      aTag.click();
+      aTag.remove();
+    });
 };
